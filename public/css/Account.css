@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: url(../images/pexels-photo-9781548.jpeg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* header */
+
+header {
+  position: fixed;
+  background: #22242a;
+  padding: 20px;
+  width: 100%;
+  height: 30px;
+  z-index: 1000000;
+}
+
+.left_area h3 {
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.left_area span {
+  color: #19b3d3;
+}
+.right_area span {
+  padding: 5px;
+  margin-top: -30px;
+  margin-right: 40px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  float: right;
+  margin-right: 5%;
+}
+.logout_btn {
+  padding: 5px;
+  background: #19b3d3;
+  text-decoration: none;
+  float: right;
+  margin-top: -30px;
+  margin-right: 40px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.5s;
+  transition-property: background;
+}
+
+.logout_btn:hover {
+  background: #0b87a6;
+}
+
+.sidebar {
+  background: #2f323a;
+  margin-top: 70px;
+  padding-top: 30px;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  transition: 0.5s;
+  transition-property: left;
+}
+
+.sidebar .profile_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.sidebar h4 {
+  color: #ccc;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  padding-left: 40px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-property: background;
+}
+
+.sidebar a:hover {
+  background: #19b3d3;
+}
+
+.sidebar i {
+  padding-right: 10px;
+}
+
+label #sidebar_btn {
+  z-index: 1;
+  color: #fff;
+  position: fixed;
+  cursor: pointer;
+  left: 300px;
+  font-size: 20px;
+  margin: 5px 0;
+  transition: 0.5s;
+  transition-property: color;
+}
+
+label #sidebar_btn:hover {
+  color: #19b3d3;
+}
+
+#check:checked ~ .sidebar {
+  left: -190px;
+}
+
+#check:checked ~ .sidebar a span {
+  display: none;
+}
+
+#check:checked ~ .sidebar a {
+  font-size: 20px;
+  margin-left: 170px;
+  width: 80px;
+}
+.content {
+  z-index: 888;
+  margin-left: 250px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+#check:checked ~ .content {
+  margin-left: 60px;
+}
+
+#check {
+  display: none;
+}
+.content h1 {
+  margin-top: 7%;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  transition: 1s ease-in-out;
+  animation: dichuyen 2s linear forwards;
+  width: 100%;
+}
+.content table {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+  margin-top: 5%;
+  border-collapse: collapse;
+}
+.content table tr th {
+  border-bottom: 1px solid #c6b4d8;
+  margin-top: 5px;
+  background-color: #c6b4d8;
+  color: white;
+}
+.content table tr td {
+  margin-top: 2%;
+  border-bottom: 1px solid black;
+  padding: 5px 10px;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  background-color: #9fb0cf;
+  border-radius: 30px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .modal-content h1 {
+  text-align: center;
+  margin-top: 5%;
+  color: white;
+}
+.modal .modal-content div {
+  text-align: center;
+  margin-top: 2%;
+  color: white;
+}
+.modal .modal-content div input {
+  margin-left: 5%;
+  width: 30%;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+}
+

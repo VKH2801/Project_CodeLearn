@@ -1,0 +1,346 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    color: #666;
+    overflow-x: hidden;
+}
+/* <-----> Header <------------> */
+/* Header top-bar -----------------------------------------------------------------------------*/
+:root {
+    --text_color1: #fff;
+    --text_color2: #666;
+    --main_color: #ab8e66;
+    --background_color: #ffffff;
+    --button_color: #000;
+    --footer_color: #f3f3f3;
+    --placeholder_color: #888;
+    --star-color: #ffb933;
+}
+a {
+    text-decoration: none;
+    color: var(--button_color);
+}
+.top-bar {
+    background-color: var(--main_color);
+    padding: 10px 0;
+    color: #fff;
+}
+.container {
+    max-width: 1200px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+}
+.top-bar-left,
+.top-bar-right {
+    line-height: 48px;
+    display: block;
+    color: var(--text_color1);
+}
+.top-bar-right a {
+    color: var(--text_color1);
+}
+.btn-logOut {
+    padding: 7px 15px;
+    background-color: #eeeeee;
+    border-radius: 30px;
+    border: none;
+    color: var(--main_color);
+    cursor: pointer;
+    outline: none;
+    margin-left: 10px;
+}
+.btn-logOut:hover {
+    background-color: var(--placeholder_color);
+    color: #f1f1f1;
+}
+
+/* Header main */
+.main-header {
+    padding: 50px 0;
+}
+.row-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Header search */
+.header-search {
+    width: 60%;
+    padding: 0px 20px;
+}
+.form-content {
+    display: flex;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+    align-items: center;
+    height: 43px;
+}
+.search-inner {
+    width: 65%;
+}
+.search-category {
+    width: 25%;
+    border-right: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+    position: relative;
+}
+.category-select {
+    width: 100%;
+    height: 43px;
+    padding: 7px 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: var(--placeholder_color);
+    font-family: inherit;
+    font-size: inherit;
+    appearance: none;
+}
+.search-category::before {
+    content: "v";
+    position: absolute;
+    right: 20px;
+    top: 15%;
+    color: var(--placeholder_color);
+    font-size: 15px;
+}
+.category-select option {
+    padding: 5px 10px;
+}
+.search-btn {
+    width: 10%;
+}
+.search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding: 7px 20px;
+}
+.btn-search {
+    width: 100%;
+    height: 43px;
+    border: none;
+    background-color: var(--main_color);
+    cursor: pointer;
+}
+.btn-search .fa-magnifying-glass {
+    color: var(--background_color);
+    font-size: 20px;
+}
+/* Header control */
+.header-control {
+    display: flex;
+    align-items: center;
+}
+.control-link {
+    color: var(--text_color2);
+}
+.header-control-cart {
+    font-size: 23px;
+    padding: 0 15px;
+}
+.header-control-user {
+    padding-left: 15px;
+    font-size: 23px;
+}
+
+/* Header nav */
+.header-nav {
+    background-color: var(--footer_color);
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-link {
+    display: inline-block;
+    padding: 18px 25px;
+}
+.nav-link a {
+    font-size: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Jost";
+    color: #000;
+}
+/* <----------------> Content <------------> */
+.content {
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 1200px;
+    margin-bottom: 5%;
+}
+.row {
+    margin-bottom: 5px;
+}
+/* <--------------> Breadcrums <----------------> */
+.Header-breadcrums {
+    width: 100%;
+}
+.Header-breadcrums .Breadcrums-trail {
+    padding: 34px 0 30px;
+    list-style: none;
+    background-color: #ffffff;
+    margin: 0;
+    border-radius: 4px;
+}
+.Header-breadcrums .Breadcrums-trail li {
+    list-style: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+}
+.Header-breadcrums .Breadcrums-trail li .item-start {
+    color: #888888;
+}
+.Header-breadcrums .Breadcrums-trail li .item-end {
+    color: black;
+}
+/* <--------------> Form Login && Form Register <--------> */
+.content h3 {
+    line-height: 1.428;
+    font-weight: 500;
+    color: #000;
+    margin-top: 0;
+}
+.content .Form {
+    width: 100%;
+    display: flex;
+}
+.content .form-login {
+    width: 40%;
+    margin: 0 auto;
+    padding: 5px 10px;
+}
+.content .form-login:hover {
+    box-shadow: 5px 5px 5px 5px grey;
+    transition: 0.25s ease-in-out;
+}
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.icon {
+    padding: 10px;
+    background: #ab8e66;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+    margin-right: 5px;
+    border-radius: 41px;
+}
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+.input-field:focus {
+    border: 2px solid #ab8e66;
+}
+.btn {
+    background-color: #ab8e66;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+.btn:hover {
+    opacity: 1;
+}
+
+/* <------------------> Footer <------------> */
+.footer-main {
+    background-color: var(--footer_color);
+}
+.footer-content {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-top-block {
+    text-align: center;
+    width: 33.33%;
+}
+.footer-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 24px;
+    position: relative;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-family: "Jost";
+    color: #000000;
+}
+.footer-menu-item {
+    color: #191919;
+    line-height: 26px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.footer-newletter h3 {
+    margin-bottom: 20px;
+}
+.newsletter-desc {
+    padding-bottom: 20px;
+    max-width: 70%;
+    margin: 0 auto;
+}
+.footer-input-email {
+    width: 100%;
+    background-color: #fff;
+    color: var(--text_color2);
+    font-size: 15px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    outline: none;
+    border: 1px solid #eeeeee;
+    padding: 7px 20px;
+}
+.footer-input-email:focus {
+    border-color: #ab8e66;
+}
+.footer-btn-email {
+    color: #fff;
+    width: 100%;
+    background: #ab8e66;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 30px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    padding: 0px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    text-transform: uppercase;
+}

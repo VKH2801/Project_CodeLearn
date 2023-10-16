@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/user.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+        <script src="/js/user.js"></script>
+        <script src="/js/moment.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <div class="top-bar">
+                <div class="container">
+                    <div class="top-bar-left">
+                        <div class="header-message">Welcome to our online store!</div>
+                    </div>
+                    <div class="top-bar-right" id="control-top">
+                        <a href="/Login" id="control-link">Login or Register</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="main-header">
+                    <div class="row-header">
+                        <div class="header-logo">
+                            <a href="/home"> <img src="/images/logo.png" alt="img" /> </a>
+                        </div>
+                        <div class="header-search">
+                            <form action="/shopping/search" class="form-search" method="post">
+                                <div class="form-content">
+                                    <div class="search-inner">
+                                        <input type="text" class="search-input" placeholder="Search here" name="itemName" />
+                                    </div>
+                                    <div class="search-category">
+                                        <select name="catelogy" id="" class="category-select">
+                                            <option value="">Accessories</option>
+                                            <option value="id">Id</option>
+                                            <option value="name">Name</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-btn">
+                                        <button class="btn-search" type="submit">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="header-control">
+                            <div class="header-control-cart">
+                                <a href="/shoppingcart" class="control-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                            <div class="header-control-user">
+                                <a href="/user" class="control-link" id="link-page-user"><i class="fa-regular fa-user"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav">
+                <div class="container">
+                    <div class="header-nav-wapper">
+                        <div class="nav-wapper-category"></div>
+                        <div class="nav-wapper-main">
+                            <ul>
+                                <li class="nav-link"><a href="/home">HOME</a></li>
+                                <li class="nav-link"><a href="/Shopping">SHOP</a></li>
+                                <li class="nav-link"><a href="/Contract">CONTRACT</a></li>
+                                <li class="nav-link"><a href="/about">ABOUT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <!-- Modal change password -->
+            <div id="myModal" class="modal">
+                <div class="modal__layout">
+                    <div class="modal-title">
+                        <h3>Change Password</h3>
+                    </div>
+                    <div class="modal__content">
+                        <div class="grid__form">
+                            <div class="grid__form-label"><label>Username</label></div>
+                            <span class="grid__form-labellock" id="tenUser"></span>
+                        </div>
+                        <div class="grid__form">
+                            <div class="grid__form-label"><label>Password</label></div>
+                            <input class="grid__form-input modal-input" type="password" placeholder="Password" id="afterPass" onchange="onchangeAfterPass()" />
+                        </div>
+                        <div class="grid__form">
+                            <div class="grid__form-label"><label>New Password</label></div>
+                            <input class="grid__form-input modal-input" type="password" placeholder="New Password" id="newPass" onchange="onchangeNewPass()" />
+                        </div>
+                        <div class="modal-content-checkbox"><input type="checkbox" class="input-checkbox" id="checkboxid" /><span>Show Password</span></div>
+                    </div>
+                    <div class="modal-control">
+                        <button class="btn-modal" id="btnCancel">Cancel</button>
+                        <button class="btn-modal btn-ok-modal" id="btnOk">Change</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal detail bills -->
+            <div id="myModal-bill" class="modal">
+                <div class="modal__layout modal__layout-bill">
+                    <div class="modal__bill-title">
+                        <h3>Order: <span id="maHoaDon"></span></h3>
+                        <i id="btnExit" class="fas fa-times"></i>
+                    </div>
+                    <div class="modal__bill-content">
+                        <table class="table-bill" id="table">
+                            <thead class="modal__bill-thead">
+                                <tr class="modal__bill-tr">
+                                    <th class="modal__bill-th">Product Name</th>
+                                    <th class="modal__bill-th">Image</th>
+                                    <th class="modal__bill-th">Quantity</th>
+                                    <th class="modal__bill-th">Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody class="modal__bill-tbody" id="listDetailBill"></tbody>
+                        </table>
+                    </div>
+                    <div class="modal__bill-footer">
+                        <div style="color: black">Date: <span id="date-create"></span></div>
+                        <div style="color: black">Coupon ID: <span id="coupon-id">1</span></div>
+                        <div>Total bills : $<span id="total-bill-detail"></span></div>
+                    </div>
+                </div>
+            </div>
+            <section class="section">
+                <div class="grid__content-left">
+                    <div class="grid__left-img">
+                        <img src="/images/upload1639191105886.jpg" alt="Hinh nen" class="image__user" id="avatarKH" />
+                    </div>
+                    <h3 class="user__name" id="fullName">Wonder Women</h3>
+                    <div class="grid__left-menu">
+                        <button class="tablinks" onclick="openTab(event, 'account')" id="defaultOpen"><i class="fas fa-user icon-menu"></i>My Account</button>
+                        <button class="tablinks" onclick="openTab(event, 'bill')"><i class="fas fa-wallet icon-menu"></i>My Bill</button>
+                    </div>
+                </div>
+                <!-- View Account -->
+                <div class="grid__content-right" id="account">
+                    <div class="grid__header">
+                        <h2>My Profile</h2>
+                        <span class="grid__header-note">Manage profile information</span>
+                    </div>
+                    <div class="grid__middle">
+                        <div class="grid__middle-left">
+                            <div class="grid__form">
+                                <div class="grid__form-label"><label>Username</label></div>
+                                <span class="grid__form-labellock" id="tenTK"></span>
+                            </div>
+                            <div class="grid__form">
+                                <div class="grid__form-label"><label>Password</label></div>
+                                <span class="grid__form-labellock">**********</span>
+                                <span class="grid__form-labelchange" onclick="loadModal()">Change</span>
+                            </div>
+                            <div class="grid__form">
+                                <div class="grid__form-label"><label>Full Name</label></div>
+                                <input class="grid__form-input" type="text" id="hoTen" placeholder="Full Name" />
+                            </div>
+                            <div class="grid__form">
+                                <div class="grid__form-label"><label>Number Phone</label></div>
+                                <input class="grid__form-input" type="text" id="soDT" placeholder="Number Phone" />
+                            </div>
+                            <div class="grid__form">
+                                <div class="grid__form-label"><label>Identity card</label></div>
+                                <span class="grid__form-labellock" id="CMNDKH"></span>
+                            </div>
+                            <div class="grid__form">
+                                <div class="grid__form-label"><label>Rank</label></div>
+                                <span class="grid__form-labellock" id="capBac">Platinum</span>
+                                <i class="fa-solid fa-medal"></i>
+                            </div>
+                            <div class="grid__form">
+                                <div class="grid__form-label"><label>Address</label></div>
+                                <input class="grid__form-input" type="text" id="diaChi" placeholder="Address" />
+                            </div>
+                            <div class="grid__form">
+                                <div class="grid__form-label"><label>Gender</label></div>
+                                <div class="grid__form-radio">
+                                    <input id="male-radio" class="form__radio" type="radio" name="gender" value="True" />
+                                    <label for="male-radio">Male</label>
+                                    <input id="female-radio" class="form__radio" type="radio" name="gender" value="False" />
+                                    <label for="female-radio">Female</label>
+                                </div>
+                            </div>
+                            <div class="grid__form">
+                                <div class="grid__form-label"><label>Birthday</label></div>
+                                <input class="grid__form-input" type="date" id="ngaySinh" />
+                            </div>
+                            <div class="grid__form" style="float: right">
+                                <button class="grid__form-btnsave" id="btn-saveUser" onclick="updateInfoUser()">Save</button>
+                            </div>
+                        </div>
+                        <div class="grid__middle-right">
+                            <form action="/user/uploadImage" method="post" enctype="multipart/form-data">
+                                <h3>Image</h3>
+                                <div class="grid__middle-right-img">
+                                    <i class="fas fa-user icon-image"></i>
+                                </div>
+                                <input type="file" id="choosefile" style="display: none" name="imageUser" />
+                                <input type="hidden" name="idUser" id="idUser" />
+                                <span class="grid__middle-right-fileName" id="fileName">File Name</span>
+                                <label for="choosefile" class="btn-choose-image">Click to select file</label>
+                                <button type="submit" class="btn-upload-image">Update Avatar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View Bill -->
+                <div class="grid__content-right" id="bill">
+                    <div class="grid__header">
+                        <h2>My Bills</h2>
+                        <span class="grid__header-note">Manage bills information</span>
+                    </div>
+                    <div class="grid__middle">
+                        <table class="table" id="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id Bill</th>
+                                    <th scope="col">Order creation date</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="listBills"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-top">
+                        <div class="footer-top-block footer-quickmenu">
+                            <h2 class="footer-title">Quick Menu</h2>
+                            <ul class="footer-menu">
+                                <li class="footer-menu-item">
+                                    <a href="#">New arrivals</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Life style</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Accents</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Tables</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Dining</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-top-block footer-newletter">
+                            <h3 class="footer-title">NewsLetter</h3>
+                            <div class="newsletter-desc">Sign up for our free video course and urban garden inspiration</div>
+                            <form class="footer-email-block">
+                                <input type="text" class="footer-input-email" placeholder="Your email letter" />
+                                <button class="footer-btn-email">Subscribe</button>
+                            </form>
+                        </div>
+                        <div class="footer-top-block footer-information">
+                            <h2 class="footer-title">Information</h2>
+                            <ul class="footer-menu">
+                                <li class="footer-menu-item">
+                                    <a href="#">FAQs</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Track Order</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Delivery</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Contact Us</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Return</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-end">
+                        <div class="footer-social">
+                            <ul class="social-menu">
+                                <li class="social-menu-link"><i class="fa-brands fa-facebook-f"></i></li>
+                                <li class="social-menu-link"><i class="fa-brands fa-twitter"></i></li>
+                                <li class="social-menu-link"><i class="fa-brands fa-instagram"></i></li>
+                            </ul>
+                        </div>
+                        <div class="footer-copyright">Copyright © 2020 Stelina . All rights reserved</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

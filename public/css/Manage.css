@@ -1,0 +1,350 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: url(../images/pexels-photo-9781548.jpeg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* header */
+
+header {
+  position: fixed;
+  background: #22242a;
+  padding: 20px;
+  width: 100%;
+  height: 30px;
+  z-index: 1000000;
+}
+
+.left_area h3 {
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.left_area span {
+  color: #19b3d3;
+}
+.right_area span {
+  padding: 5px;
+  margin-top: -30px;
+  margin-right: 40px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  float: right;
+  margin-right: 5%;
+}
+.logout_btn {
+  padding: 5px;
+  background: #19b3d3;
+  text-decoration: none;
+  float: right;
+  margin-top: -30px;
+  margin-right: 40px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.5s;
+  transition-property: background;
+}
+
+.logout_btn:hover {
+  background: #0b87a6;
+}
+
+.sidebar {
+  background: #2f323a;
+  margin-top: 70px;
+  padding-top: 30px;
+  position: fixed;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  transition: 0.5s;
+  transition-property: left;
+}
+
+.sidebar .profile_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.sidebar h4 {
+  color: #ccc;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  color: #fff;
+  display: block;
+  width: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  padding-left: 40px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  transition-property: background;
+}
+
+.sidebar a:hover {
+  background: #19b3d3;
+}
+
+.sidebar i {
+  padding-right: 10px;
+}
+
+label #sidebar_btn {
+  z-index: 1;
+  color: #fff;
+  position: fixed;
+  cursor: pointer;
+  left: 300px;
+  font-size: 20px;
+  margin: 5px 0;
+  transition: 0.5s;
+  transition-property: color;
+}
+
+label #sidebar_btn:hover {
+  color: #19b3d3;
+}
+
+#check:checked ~ .sidebar {
+  left: -190px;
+}
+
+#check:checked ~ .sidebar a span {
+  display: none;
+}
+
+#check:checked ~ .sidebar a {
+  font-size: 20px;
+  margin-left: 170px;
+  width: 80px;
+}
+.content {
+  z-index: 888;
+  margin-left: 250px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+#check:checked ~ .content {
+  margin-left: 60px;
+}
+
+#check {
+  display: none;
+}
+.content .h1 {
+  margin-top: 7%;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  transition: 1s ease-in-out;
+  animation: dichuyen 2s linear forwards;
+  width: 100%;
+}
+.content .Controll {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.content .Controll .Input-Search {
+  width: 30%;
+  padding: 0.5% 0;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 30px;
+}
+.content .Controll button {
+  margin-left: 3%;
+  background-color: #ab8e66;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+ul.Products {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  margin-top: 50px;
+  margin-left: 25px;
+  box-sizing: border-box;
+}
+ul.Products li {
+  flex-basis: 15%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  margin: 5px 5px;
+  border: 1px solid #ccc;
+}
+ul.Products li .Product-middle {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ab8e66;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+ul.Products li .Product-middle .Buy-Now {
+  width: 30%;
+  background-color: #ab8e66;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+}
+ul.Products li .Product-middle img {
+  display: block;
+}
+ul.Products li:hover .Product-middle .Buy-Now {
+  bottom: 40%;
+}
+ul.Products li .Product-middle .Buy-Now {
+  padding: 0px 0;
+  position: absolute;
+  width: 148px;
+  border-radius: 46px;
+  bottom: -35px;
+  left: 10%;
+  border-radius: 10px;
+}
+ul.Products li .Product-middle .Buy-Now span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  display: inline-block;
+  vertical-align: top;
+}
+ul.Products li img {
+  width: 100%;
+  height: auto;
+}
+.Product-rating .checked {
+  color: orange;
+}
+ul.Products li .Product-info {
+  text-align: center;
+  margin-top: 5%;
+}
+ul.Products li .Product-info a {
+  width: 100%;
+  display: block;
+  text-decoration: none;
+}
+ul.Products li .Product-info .Product-Name {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 4px;
+  color: #ab8e66;
+}
+ul.Products li .Product-info .Product-Priece {
+  display: block;
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 4px;
+  line-height: 100%;
+}
+ul.Products li .Product-info .Product-Status {
+  font-size: 20px;
+  color: red;
+  text-transform: uppercase;
+}
+/* <----------> Modal <-------------> */
+#Modal-Add {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+#Modal-Update {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal-content {
+  background-color: #ebeae4;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  overflow: hidden;
+}
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal .modal-content h1 {
+  text-align: center;
+}
+.modal .modal-content .Modal-information {
+  width: 100%;
+  box-sizing: border-box;
+  color: black;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.modal .modal-content .Modal-information li {
+  margin: 5px 5px;
+}
+.modal .modal-content .Modal-information li input[type="text"],
+input[type="number"] {
+  text-align: center;
+  padding: 5px 5px;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 15px;
+}
+.modal .modal-content .Modal-information li select {
+  padding: 5px 5px;
+}
+.modal .modal-content .Modal-information button {
+  margin-top: 1%;
+  width: 10%;
+  border: none;
+  border-radius: 15px;
+  background-color: #ab8e66;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}

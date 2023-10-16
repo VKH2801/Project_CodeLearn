@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Customer Management</title>
+    <link rel="stylesheet" href="/css/Customer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+      integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script src="/js/Customer.js"></script>
+    <script src="/js/moment.js"></script>
+</head>
+<body>
+  <input type="checkbox" id="check" />
+  <header>
+    <label for="check">
+      <i class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left_area">
+      <h3>NT <span>K</span></h3>
+    </div>
+    <div class="right_area">
+      <span style="color:#fff;" class="Name"></span>
+      <a href="http://localhost:3000/Login" onclick="removeItem()" class="logout_btn"
+        ><i class="fas fa-power-off"></i
+      ></a>
+    </div>
+  </header>
+  <div class="sidebar">
+    <center id="img">
+      <h4 id="h4"></h4>
+    </center>
+    <a href="/Manage"
+      ><i class="fas fa-shopping-basket"></i> <span>Product Shop</span></a
+    >
+    <a href="/Customer"
+      ><i class="fas fa-user-circle"></i>  <span>Customer Management</span></a
+    >
+    <a href="/Sumarry"><i class="fas fa-table"></i>  <span>Customer Summary</span></a>
+    <a href="/Account"
+      ><i class="fas fa-user-alt"></i>  <span>Account Information</span></a
+    >
+    <a href="/Chat"
+      ><i class="fas fa-comment"></i>  <span>Staff Communication</span></a
+    >
+  </div>
+  <div class="content">
+    <h1 class="h1">Customer Management</h1>
+    <div class="Controll">
+      <input id="Input" class="Input-Search" type="text" placeholder="Seach Products" />
+      <select id="Value-Search">
+        <option>Card</option>
+        <option>Name</option>
+      </select>
+      <button class="Button-Controll" onclick="FindCustomer()">
+        <i class="fa-solid fa-magnifying-glass"></i></i>Search</button>
+    </div>
+    <ul class="Customer">
+    </ul>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+          
+        </div> 
+      </div>
+  </div>
+</body>
+</html>

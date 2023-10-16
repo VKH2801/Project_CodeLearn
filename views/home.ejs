@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/home.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+        <title>Stelina Perfume</title>
+        <script src="/js/home.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="top-bar">
+                <div class="container">
+                    <div class="top-bar-left">
+                        <div class="header-message">Welcome to our online store!</div>
+                    </div>
+                    <div class="top-bar-right" id="control-top">
+                        <a href="/Login" id="control-link">Login or Register</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="main-header">
+                    <div class="row-header">
+                        <div class="header-logo">
+                            <a href="/home"> <img src="/images/logo.png" alt="img" /> </a>
+                        </div>
+                        <div class="header-search">
+                            <form action="/shopping/search" class="form-search" method="post">
+                                <div class="form-content">
+                                    <div class="search-inner">
+                                        <input type="text" class="search-input" placeholder="Search here" name="itemName" />
+                                    </div>
+                                    <div class="search-category">
+                                        <select name="catelogy" id="" class="category-select">
+                                            <option value="">Accessories</option>
+                                            <option value="id">Id</option>
+                                            <option value="name">Name</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-btn">
+                                        <button class="btn-search" type="submit">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="header-control">
+                            <div class="header-control-cart">
+                                <a href="/shoppingcart" class="control-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                            <div class="header-control-user">
+                                <a href="/user" class="control-link" id="link-page-user"><i class="fa-regular fa-user"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav">
+                <div class="container">
+                    <div class="header-nav-wapper">
+                        <div class="nav-wapper-category"></div>
+                        <div class="nav-wapper-main">
+                            <ul>
+                                <li class="nav-link"><a href="/home">HOME</a></li>
+                                <li class="nav-link"><a href="/Shopping">SHOP</a></li>
+                                <li class="nav-link"><a href="/Contract">CONTRACT</a></li>
+                                <li class="nav-link"><a href="/about">ABOUT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="toast"></div>
+        <div class="main-content">
+            <div class="container">
+                <div class="slideshow-main">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                            <img src="/images/slider-thumb1.jpg" style="width: 100%" />
+                            <div class="mySlides-content">
+                                <h5 class="mySlides-title">New Arrivals!</h5>
+                                <h3 class="mySlides-title-big">Trending Collection</h3>
+                                <div class="mySlides-desc">
+                                    Up to
+                                    <span class="sale-desc"> 50% </span>
+                                </div>
+                                <a href="/shopping" class="btn-shop-now">SHOP NOW</a>
+                            </div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="/images/slider-thumb2.jpg" style="width: 100%" />
+                            <div class="mySlides-content">
+                                <h5 class="mySlides-title">New Arrivals!</h5>
+                                <h3 class="mySlides-title-big">Trending Collection</h3>
+                                <div class="mySlides-desc">
+                                    Up to
+                                    <span class="sale-desc"> 50% </span>
+                                </div>
+                                <a href="/shopping" class="btn-shop-now">SHOP NOW</a>
+                            </div>
+                        </div>
+                        <div class="mySlides fade">
+                            <img src="/images/slider-thumb3.jpg" style="width: 100%" />
+                            <div class="mySlides-content">
+                                <h5 class="mySlides-title">New Arrivals!</h5>
+                                <h3 class="mySlides-title-big">Trending Collection</h3>
+                                <div class="mySlides-desc">
+                                    Up to
+                                    <span class="sale-desc"> 50% </span>
+                                </div>
+                                <a href="/shopping" class="btn-shop-now">SHOP NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-main">
+                    <div class="banner-container">
+                        <div class="banner-card">
+                            <img src="images/banner-home-10.jpg" alt="banner" />
+                            <div class="banner-info">
+                                <h3 class="banner-title">Best Seller</h3>
+                                <div class="banner-desc">Check out our your perfume collection now!</div>
+                                <span class="banner-link"><a href="/shopping">SHOP NOW</a></span>
+                            </div>
+                        </div>
+                        <div class="banner-card">
+                            <img src="/images/banner-home-12.jpg" alt="banner" />
+                            <div class="banner-info banner-info-center">
+                                <h4 class="banner-subtitle">END THIS WEEKEND</h4>
+                                <h3 class="banner-big-title">Big Sale 75% Off</h3>
+                                <div class="banner-code">
+                                    USE PROMO CODE:
+                                    <span>STE****</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-card">
+                            <img src="/images/banner-home-11.jpg" alt="banner" />
+                            <div class="banner-info">
+                                <h3 class="banner-title">Best Seller</h3>
+                                <div class="banner-desc">Check out our your perfume collection now!</div>
+                                <span class="banner-link"><a href="/shopping">SHOP NOW</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-items">
+                    <div class="tab-head">
+                        <div class="tab-head-name">New Arrivals</div>
+                    </div>
+                    <div class="tab-items-container" id="listProduct"></div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-second">
+            <img src="/images/banner-home-4.jpg" alt="" style="width: 110%; height: 100%" />
+            <div class="banner-info">
+                <h4 class="banner-subtitle">CELEBRATE DAY SALE!</h4>
+                <h3 class="banner-title">Save 25% Of On All Items Collection</h3>
+                <span class="banner-link"><a href="/shopping">SHOP NOW</a></span>
+            </div>
+        </div>
+        <div class="sub-content">
+            <div class="container">
+                <div class="product-list-second">
+                    <h3 class="menu-title-main">Best seller</h3>
+                    <div class="sub-product-container" id="listBestSeller"></div>
+                </div>
+            </div>
+        </div>
+        <div class="slick-track">
+            <div class="icon-title-ins">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <h3 class="menu-title-main">INSTAGRAM FEED</h3>
+            <div class="slick-track-container">
+                <div class="block-slick">
+                    <img src="/images/item-instagram-1.jpg" alt="images-instagram" />
+                </div>
+                <div class="block-slick">
+                    <img src="/images/item-instagram-2.jpg" alt="images-instagram" />
+                </div>
+                <div class="block-slick">
+                    <img src="/images/item-instagram-3.jpg" alt="images-instagram" />
+                </div>
+                <div class="block-slick">
+                    <img src="/images/item-instagram-4.jpg" alt="images-instagram" />
+                </div>
+                <div class="block-slick">
+                    <img src="/images/item-instagram-5.jpg" alt="images-instagram" />
+                </div>
+            </div>
+        </div>
+        <footer class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-top">
+                        <div class="footer-top-block footer-quickmenu">
+                            <h2 class="footer-title">Quick Menu</h2>
+                            <ul class="footer-menu">
+                                <li class="footer-menu-item">
+                                    <a href="#">New arrivals</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Life style</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Accents</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Tables</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Dining</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-top-block footer-newletter">
+                            <h3 class="footer-title">NewsLetter</h3>
+                            <div class="newsletter-desc">Sign up for our free video course and urban garden inspiration</div>
+                            <form class="footer-email-block">
+                                <input type="text" class="footer-input-email" placeholder="Your email letter" />
+                                <button class="footer-btn-email">Subscribe</button>
+                            </form>
+                        </div>
+                        <div class="footer-top-block footer-information">
+                            <h2 class="footer-title">Information</h2>
+                            <ul class="footer-menu">
+                                <li class="footer-menu-item">
+                                    <a href="#">FAQs</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Track Order</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Delivery</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Contact Us</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Return</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-end">
+                        <div class="footer-social">
+                            <ul class="social-menu">
+                                <li class="social-menu-link"><i class="fa-brands fa-facebook-f"></i></li>
+                                <li class="social-menu-link"><i class="fa-brands fa-twitter"></i></li>
+                                <li class="social-menu-link"><i class="fa-brands fa-instagram"></i></li>
+                            </ul>
+                        </div>
+                        <div class="footer-copyright">Copyright © 2020 Stelina . All rights reserved</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

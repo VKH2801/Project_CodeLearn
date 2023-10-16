@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Staff Communicate</title>
+        <link rel="stylesheet" href="/css/Chat.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/Chat.js"></script>
+    </head>
+    <body>
+        <input type="checkbox" id="check" />
+        <header>
+            <label for="check">
+                <i class="fas fa-bars" id="sidebar_btn"></i>
+            </label>
+            <div class="left_area">
+                <h3>NT <span>K</span></h3>
+            </div>
+            <div class="right_area">
+                <span style="color: #fff" class="Name"></span>
+                <a href="http://localhost:3000/Login" onclick="removeItem()" class="logout_btn"><i class="fas fa-power-off"></i></a>
+            </div>
+        </header>
+        <div class="sidebar">
+            <center id="img">
+                <h4 id="h4"></h4>
+            </center>
+            <a href="/Manage"><i class="fas fa-shopping-basket"></i><span>Product Shop</span></a>
+            <a href="/Customer"><i class="fas fa-user-circle"></i><span>Customer Management</span></a>
+            <a href="/Sumarry"><i class="fas fa-table"></i><span>Customer Summary</span></a>
+            <a href="/Account"><i class="fas fa-user-alt"></i><span>Account Information</span></a>
+            <a href="/Chat"><i class="fas fa-comment"></i><span>Staff Communication</span></a>
+        </div>
+        <div class="content">
+            <div id="Chat-room">
+                <div id="HienThi">
+                    <div id="DanhSachRoom">
+                        <h3>List Online</h3>
+                        <div id="ds"></div>
+                    </div>
+                </div>
+                <div id="form-room">
+                    <h1>Form Chat</h1>
+                    <ul id="Mess"></ul>
+                    <div id="form-Send">
+                        <input type="text" id="input-Send" />
+                        <button onclick="sendMess()"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

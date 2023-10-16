@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/about.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+        <title>Document</title>
+        <script>
+            $(document).ready(function () {
+                let USER = JSON.parse(localStorage.getItem("UserName"));
+                if (USER != null) {
+                    $("#control-link").css("display", "none");
+                    var dt = $(`
+                            <span>Welcome ${USER.tenTK}</span>
+                            <button class="btn-logOut" onclick="logOut()"><i class="fa-solid fa-right-from-bracket"></i></button>
+                    `);
+                    $("#control-top").append(dt);
+                }
+
+                $("#link-page-user").click(function () {
+                    let user = JSON.parse(localStorage.getItem("UserName"));
+                    if (user == null || user.LoaiTK == "admin     ") {
+                        window.location.replace("/login");
+                    } else {
+                        window.location.replace("/user");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="top-bar">
+                <div class="container">
+                    <div class="top-bar-left">
+                        <div class="header-message">Welcome to our online store!</div>
+                    </div>
+                    <div class="top-bar-right" id="control-top">
+                        <a href="/Login" id="control-link">Login or Register</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="main-header">
+                    <div class="row-header">
+                        <div class="header-logo">
+                            <a href="/home"> <img src="/images/logo.png" alt="img" /> </a>
+                        </div>
+                        <div class="header-search">
+                            <form action="/shopping/search" class="form-search" method="post">
+                                <div class="form-content">
+                                    <div class="search-inner">
+                                        <input type="text" class="search-input" placeholder="Search here" name="itemName" />
+                                    </div>
+                                    <div class="search-category">
+                                        <select name="catelogy" id="" class="category-select">
+                                            <option value="">Accessories</option>
+                                            <option value="id">Id</option>
+                                            <option value="name">Name</option>
+                                        </select>
+                                    </div>
+                                    <div class="search-btn">
+                                        <button class="btn-search" type="submit">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="header-control">
+                            <div class="header-control-cart">
+                                <a href="/shoppingcart" class="control-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                            <div class="header-control-user">
+                                <a href="/user" class="control-link" id="link-page-user"><i class="fa-regular fa-user"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-nav">
+                <div class="container">
+                    <div class="header-nav-wapper">
+                        <div class="nav-wapper-category"></div>
+                        <div class="nav-wapper-main">
+                            <ul>
+                                <li class="nav-link"><a href="/home">HOME</a></li>
+                                <li class="nav-link"><a href="/Shopping">SHOP</a></li>
+                                <li class="nav-link"><a href="/Contract">CONTRACT</a></li>
+                                <li class="nav-link"><a href="/about">ABOUT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div class="sub-title">
+                    Home >>
+                    <span>About</span>
+                </div>
+                <h3 class="big-title">About US</h3>
+                <div class="header-banner">
+                    <img src="/images/about-background.jpg" alt="images-about" />
+                    <div class="banner-content">
+                        <h2 class="banner-title">New Collection for you</h2>
+                        <div class="banner-subtitle">
+                            Shop the latest products right <br />
+                            We have beard supplies from top brands.
+                        </div>
+                        <a href="/shopping" class="btn-link-shop">Shop Now</a>
+                    </div>
+                </div>
+                <div class="policy">
+                    <div class="policy-block">
+                        <div class="policy-icon"><i class="fa-solid fa-rocket"></i></div>
+                        <h4 class="policy-title">EU FREE DELIVERY</h4>
+                        <div class="policy-text">Free Delivery on all order from EU with price more than $90.00</div>
+                    </div>
+                    <div class="policy-block">
+                        <div class="policy-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                        <h4 class="policy-title">MONEY GUARANTEE</h4>
+                        <div class="policy-text">30 Days money back guarantee no question asked!</div>
+                    </div>
+                    <div class="policy-block">
+                        <div class="policy-icon"><i class="fa-solid fa-lock"></i></div>
+                        <h4 class="policy-title">ONLINE SUPPORT 24/7</h4>
+                        <div class="policy-text">We are here to support to you 24/7. Let is shopping now!</div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <h2 class="title-team-block">Team Member</h2>
+                    <div class="team-container">
+                        <div class="card-member">
+                            <div class="member-img"><img src="/images/member1.png" alt="img-member" /></div>
+                            <div class="name-member">Mr.Nguyen</div>
+                            <div class="role-member">CEO & Founder stelina Outfit</div>
+                        </div>
+                        <div class="card-member">
+                            <div class="member-img"><img src="/images/member3.png" alt="img-member" /></div>
+                            <div class="name-member">Mr.Tien</div>
+                            <div class="role-member">CEO & Founder stelina Outfit</div>
+                        </div>
+                        <div class="card-member">
+                            <div class="member-img"><img src="/images/member2.png" alt="img-member" /></div>
+                            <div class="name-member">Mr.Phuc</div>
+                            <div class="role-member">CEO & Founder stelina Outfit</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-top">
+                        <div class="footer-top-block footer-quickmenu">
+                            <h2 class="footer-title">Quick Menu</h2>
+                            <ul class="footer-menu">
+                                <li class="footer-menu-item">
+                                    <a href="#">New arrivals</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Life style</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Accents</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Tables</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Dining</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer-top-block footer-newletter">
+                            <h3 class="footer-title">NewsLetter</h3>
+                            <div class="newsletter-desc">Sign up for our free video course and urban garden inspiration</div>
+                            <form class="footer-email-block">
+                                <input type="text" class="footer-input-email" placeholder="Your email letter" />
+                                <button class="footer-btn-email">Subscribe</button>
+                            </form>
+                        </div>
+                        <div class="footer-top-block footer-information">
+                            <h2 class="footer-title">Information</h2>
+                            <ul class="footer-menu">
+                                <li class="footer-menu-item">
+                                    <a href="#">FAQs</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Track Order</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Delivery</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Contact Us</a>
+                                </li>
+                                <li class="footer-menu-item">
+                                    <a href="#">Return</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-end">
+                        <div class="footer-social">
+                            <ul class="social-menu">
+                                <li class="social-menu-link"><i class="fa-brands fa-facebook-f"></i></li>
+                                <li class="social-menu-link"><i class="fa-brands fa-twitter"></i></li>
+                                <li class="social-menu-link"><i class="fa-brands fa-instagram"></i></li>
+                            </ul>
+                        </div>
+                        <div class="footer-copyright">Copyright © 2020 Stelina . All rights reserved</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

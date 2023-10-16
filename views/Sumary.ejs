@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Customer Management</title>
+        <link rel="stylesheet" href="/css/Sumarry.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+        <link rel="stylesheet" type="text/css" href="dist/sweetalert.css" />
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+        <script src="/js/Sumary.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+        <script src="/js/moment.js"></script>
+    </head>
+    <body>
+        <input type="checkbox" id="check" />
+        <header>
+            <label for="check">
+                <i class="fas fa-bars" id="sidebar_btn"></i>
+            </label>
+            <div class="left_area">
+                <h3>NT <span>K</span></h3>
+            </div>
+            <div class="right_area">
+                <span style="color: #fff" class="Name"></span>
+                <a href="http://localhost:3000/Login" onclick="removeItem()" class="logout_btn"><i class="fas fa-power-off"></i></a>
+            </div>
+        </header>
+        <div class="sidebar">
+            <center id="img">
+                <h4 id="h4"></h4>
+            </center>
+            <a href="/Manage"><i class="fas fa-shopping-basket"></i> <span>Product Shop</span></a>
+            <a href="/Customer"><i class="fas fa-user-circle"></i> <span>Customer Management</span></a>
+            <a href="/Sumarry"><i class="fas fa-table"></i> <span>Customer Summary</span></a>
+            <a href="/Account"><i class="fas fa-user-alt"></i> <span>Account Information</span></a>
+            <a href="/Chat"><i class="fas fa-comment"></i> <span>Staff Communication</span></a>
+        </div>
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span onclick="TurnOff()" class="close">&times;</span>
+                <h1>View Detail</h1>
+                <table class="Table-Modal">
+                    <tr>
+                        <th>Name Customer</th>
+                        <th>Name Product</th>
+                        <th>Adress Ship</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tbody id="Detail_Bill"></tbody>
+                </table>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Revenue Management</h1>
+            <div id="Amount">
+                <div class="Form-Controll">
+                    <div class="Icon">
+                        <i class="fa-solid fa-money-bill-trend-up" style="border-radius: 30px; font-size: 25px; color: green; background-color: RGB(229 248 237)"></i>
+                    </div>
+                    <div class="Information">
+                        <span class="span"><%= Money[0].TT %> $</span>
+                        <span class="TT">Sales</span>
+                    </div>
+                </div>
+                <div class="Form-Controll">
+                    <div class="Icon">
+                        <i class="fa-solid fa-users" style="border-radius: 30px; font-size: 25; color: rgb(52, 217, 237); background-color: rgb(224, 249, 252)"></i>
+                    </div>
+                    <div class="Information">
+                        <span class="span"><%= Customer[0].KH%> Person</span>
+                        <span class="TT">Customer</span>
+                    </div>
+                </div>
+                <div class="Form-Controll">
+                    <div class="Icon">
+                        <i class="fa-solid fa-box" style="border-radius: 30px; color: tomato; font-size: 25px; background-color: rgb(252, 234, 234)"></i>
+                    </div>
+                    <div class="Information">
+                        <span class="span"><%= Product[0].SP %></span>
+                        <span class="TT">Products</span>
+                    </div>
+                </div>
+            </div>
+            <div class="Revenue">
+                <div class="Form-Bill">
+                    <canvas id="canvas"></canvas>
+                </div>
+                <div class="View-Revenue">
+                    <div class="Change">
+                        <select onchange="RevenueMonth()" id="Month" value="1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <p class="Price">Monthly Revenue</p>
+                        <p class="Total-Bill"></p>
+                    </div>
+                    <img src="/images/image.png" alt="" />
+                </div>
+                <div class="List-Product">
+                    <table id="Table-Product">
+                        <tr>
+                            <th>Name Product</th>
+                            <th>Origin</th>
+                            <th>Amount</th>
+                            <th>Revenue</th>
+                        </tr>
+                        <tbody id="Revenue-Product"></tbody>
+                    </table>
+                    <table id="Table">
+                        <tr>
+                            <th>Bill Id</th>
+                            <th>Identity Card</th>
+                            <th>Total Money</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                        <tbody id="Information_Bill"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
